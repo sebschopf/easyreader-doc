@@ -1,0 +1,64 @@
+# Nom du site qui apparaîtra dans l'en-tête
+site_name: Mon Manuel EasyReader
+site_url: https://www.monalira.org/easyreader # URL où le site sera hébergé
+site_author: Sébastien Schopfer
+site_description: >-
+  Un guide complet pour prendre en main l'application EasyReader et
+  profiter de toutes ses fonctionnalités.
+
+# --- Thème ---
+theme:
+  name: material
+  language: fr
+  palette:
+    # Mode Jour
+    - scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Passer au mode sombre
+    # Mode Nuit
+    - scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Passer au mode clair
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.annotate
+    - content.tabs.link
+
+# --- Plugins ---
+plugins:
+  - search
+  - git-revision-date-localized:
+      type: timeago
+      locale: fr
+      enable_creation_date: true
+      fallback_to_build_date: true
+  - glightbox: # Permet d'ouvrir les images en grand
+      touchNavigation: true
+      loop: false
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: true
+
+# --- Navigation ---
+
+nav:
+  - 'Accueil': 'index.md'
+  - 'Installation': '1_prise_en_main_et_installation.md'
+  - 'Première ouverture': '2_premiere_ouverture.md'
+  - 'Interface principale': "3_interface_principale.md"
+  - 'Ajouter un livre': '4_ajouter_son_premier_livre.md'
+
+# --- Extensions Markdown ---
+# Celles-ci activent des fonctionnalités avancées pour l'écriture en Markdown.
+markdown_extensions:
+  - admonition # Pour les encadrés [!note], [!tip], etc.
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list # Très utile pour ajouter des styles ou des ID aux éléments
